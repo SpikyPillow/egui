@@ -103,6 +103,15 @@ fn create_display(
         });
     }
 
+    let minimum_size_points = native_options.minimum_window_size;
+
+    if let Some(minimum_size_points) = minimum_size_points {
+        window_builder = window_builder.with_min_inner_size(glutin::dpi::LogicalSize {
+            width: minimum_size_points.x as f64,
+            height: minimum_size_points.y as f64,
+        });
+    }
+
     let context_builder = glutin::ContextBuilder::new()
         .with_depth_buffer(0)
         .with_srgb(true)

@@ -180,6 +180,9 @@ pub struct NativeOptions {
     /// The initial size of the native window in points (logical pixels).
     pub initial_window_size: Option<egui::Vec2>,
 
+    /// The minimum size of the native window in points (logical pixels).
+    pub minimum_window_size: Option<egui::Vec2>,
+
     /// Should the app window be resizable?
     pub resizable: bool,
 
@@ -197,6 +200,7 @@ impl Default for NativeOptions {
             drag_and_drop_support: true,
             icon_data: None,
             initial_window_size: None,
+            minimum_window_size: None,
             resizable: true,
             transparent: false,
         }
